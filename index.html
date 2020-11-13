@@ -344,6 +344,12 @@
                   <li>
                     <a href="#withdraw-post" class="toc-h2 toc-link" data-title="Withdraw POST">Withdraw <code>POST</code></a>
                   </li>
+                  <li>
+                    <a href="#update-member-password-patch" class="toc-h2 toc-link" data-title="Update Member Password PATCH">Update Member Password <code>PATCH</code></a>
+                  </li>
+                  <li>
+                    <a href="#get-member-alias-get" class="toc-h2 toc-link" data-title="Get Member Alias GET">Get Member Alias <code>GET</code></a>
+                  </li>
               </ul>
           </li>
           <li>
@@ -366,8 +372,9 @@
         <h1 id='introduction'>Introduction</h1>
 <p><strong>AMB SuperAPI</strong> is designed around RESTFUL API. Our API is made for everyone to be able to read and predictable oriented URLs.The AMB SuperAPI allows you to integrate with the various game providers around the world without handling every risk during the integration of the game provider by yourself and <strong>super simple to use</strong>..</p>
 
-<p><strong>After Start</strong>
-When you request the API endpoint these need to use a valid API Key. You can get your API key from the <a href="https://ambsuperapi.com/profile">AMB SuperAPI Agent Profile Page</a></p>
+<p><strong>After Start</strong></p>
+
+<p>When you request the API endpoint these need to use a valid API Key. You can get your API key from the <a href="https://ambsuperapi.com/profile">AMB SuperAPI Agent Profile Page</a></p>
 <h1 id='authentication'>Authentication</h1>
 <p>An <strong>API Key</strong> is required to be sent as a part of every request, In the form of <a href="https://swagger.io/docs/specification/authentication/basic-authentication/#:~:text=Basic%20authentication%20is%20a%20simple,55w0rd%20the%20client%20would%20send">Basic Authentication</a>
 in the request header,</p>
@@ -387,12 +394,11 @@ in the request header,</p>
 <p>If an API Key is missing, malformed, or invalid, you will receive a <code>403 Unauthorised response code</code> and the following JSON response:</p>
 
 <aside class="notice">
-<code>
 {
     "message": "Unauthorized",
     "timestamp": "2020-10-04T14:12:33.013Z",
     "path": "/member"
-}</code>
+}
 </aside>
 <div class="highlight"><pre class="highlight json tab-json"><code></code></pre></div><h1 id='api-referance'>API Referance</h1><h2 id='category-lists'>Category Lists</h2>
 <table><thead>
@@ -689,9 +695,9 @@ in the request header,</p>
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div><h3 id='http-request'>HTTP Request</h3>
-<p><code>POST http://example.com/games</code></p>
+<p><code>GET {{ API_URL }}/games?productId={{ productId }}</code></p>
 <h3 id='authorization'>Authorization</h3>
-<p>Authorization: Basic <code>Base64({{agent_username}}:{{x-api-key}})</code></p>
+<p>Authorization: Basic <code>Base64({{ agent_username }}:{{ x-api-key }})</code></p>
 <h3 id='content-type'>Content Type</h3>
 <p>Type: <code>application/json</code></p>
 <h3 id='parameter-description'>Parameter Description</h3>
@@ -707,7 +713,7 @@ in the request header,</p>
 <td><code>productId</code></td>
 <td>string</td>
 <td>Y</td>
-<td>Product ID (Ref.<a href="#product-lists">Product List</a>) (Example : <code>PRETTY</code>)</td>
+<td>Product ID (Ref. <a href="#product-lists">Product List</a>) (Example : <code>PRETTY</code>)</td>
 </tr>
 </tbody></table>
 <h2 id='create-member-post'>Create Member <code>POST</code></h2>
@@ -731,9 +737,9 @@ in the request header,</p>
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div><h3 id='http-request-2'>HTTP Request</h3>
-<p><code>POST http://example.com/member</code></p>
+<p><code>POST {{ API_URL }}member</code></p>
 <h3 id='authorization-2'>Authorization</h3>
-<p>Authorization: Basic <code>Base64({{agent_username}}:{{x-api-key}})</code></p>
+<p>Authorization: Basic <code>Base64({{ agent_username }}:{{ x-api-key }})</code></p>
 <h3 id='content-type-2'>Content Type</h3>
 <p>Type: <code>application/json</code></p>
 <h3 id='parameter-description-2'>Parameter Description</h3>
@@ -757,7 +763,7 @@ in the request header,</p>
 <td><code>productId</code></td>
 <td>string</td>
 <td>Y</td>
-<td>Product ID (Ref.<a href="#product-lists">Product List</a>) (Example : <code>PRETTY</code>)</td>
+<td>Product ID (Ref. <a href="#product-lists">Product List</a>) (Example : <code>PRETTY</code>)</td>
 </tr>
 </tbody></table>
 <h2 id='get-balance-get'>Get Balance <code>GET</code></h2>
@@ -775,9 +781,9 @@ in the request header,</p>
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div><h3 id='http-request-3'>HTTP Request</h3>
-<p><code>GET http://example.com/balance</code></p>
+<p><code>GET {{ API_URL }}/balance?username={{ username }}&amp;productId={{ productId }}</code></p>
 <h3 id='authorization-3'>Authorization</h3>
-<p>Authorization: Basic <code>Base64({{agent_username}}:{{x-api-key}})</code></p>
+<p>Authorization: Basic <code>Base64({{ agent_username }}:{{ x-api-key }})</code></p>
 <h3 id='content-type-3'>Content Type</h3>
 <p>Type: <code>application/json</code></p>
 <h3 id='parameter-description-3'>Parameter Description</h3>
@@ -799,7 +805,7 @@ in the request header,</p>
 <td><code>productId</code></td>
 <td>string</td>
 <td>Y</td>
-<td>Product ID (Ref.<a href="#product-lists">Product List</a>) (Example : <code>PRETTY</code>)</td>
+<td>Product ID (Ref. <a href="#product-lists">Product List</a>) (Example : <code>PRETTY</code>)</td>
 </tr>
 </tbody></table>
 <h2 id='deposit-post'>Deposit <code>POST</code></h2>
@@ -830,9 +836,9 @@ in the request header,</p>
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div><h3 id='http-request-4'>HTTP Request</h3>
-<p><code>POST http://example.com/deposit</code></p>
+<p><code>POST {{ API_URL }}/deposit</code></p>
 <h3 id='authorization-4'>Authorization</h3>
-<p>Authorization: Basic <code>Base64({{agent_username}}:{{x-api-key}})</code></p>
+<p>Authorization: Basic <code>Base64({{ agent_username }}:{{ x-api-key }})</code></p>
 <h3 id='content-type-4'>Content Type</h3>
 <p>Type: <code>application/json</code></p>
 <h3 id='parameter-description-4'>Parameter Description</h3>
@@ -866,7 +872,7 @@ in the request header,</p>
 <td><code>productId</code></td>
 <td>string</td>
 <td>Y</td>
-<td>Product ID (Ref.<a href="#product-lists">Product List</a>) (Example : <code>PRETTY</code>)</td>
+<td>Product ID (Ref. <a href="#product-lists">Product List</a>) (Example : <code>PRETTY</code>)</td>
 </tr>
 </tbody></table>
 <h2 id='login-post'>Login <code>POST</code></h2>
@@ -893,9 +899,9 @@ in the request header,</p>
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div><h3 id='http-request-5'>HTTP Request</h3>
-<p><code>POST http://example.com/logIn</code></p>
+<p><code>POST {{ API_URL }}/logIn</code></p>
 <h3 id='authorization-5'>Authorization</h3>
-<p>Authorization: Basic <code>Base64({{agent_username}}:{{x-api-key}})</code></p>
+<p>Authorization: Basic <code>Base64({{ agent_username }}:{{ x-api-key }})</code></p>
 <h3 id='content-type-5'>Content Type</h3>
 <p>Type: <code>application/json</code></p>
 <h3 id='parameter-description-5'>Parameter Description</h3>
@@ -917,7 +923,7 @@ in the request header,</p>
 <td><code>productId</code></td>
 <td>string</td>
 <td>Y</td>
-<td>Product ID (Ref.<a href="#product-lists">Product List</a>) (Example : `PRETTY)</td>
+<td>Product ID (Ref. <a href="#product-lists">Product List</a>) (Example : <code>PRETTY</code>)</td>
 </tr>
 <tr>
 <td><code>gameCode</code></td>
@@ -960,9 +966,9 @@ in the request header,</p>
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div><h3 id='http-request-6'>HTTP Request</h3>
-<p><code>POST http://example.com/withdraw</code></p>
+<p><code>POST {{ API_URL }}/withdraw</code></p>
 <h3 id='authorization-6'>Authorization</h3>
-<p>Authorization: Basic <code>Base64({{agent_username}}:{{x-api-key}})</code></p>
+<p>Authorization: Basic <code>Base64({{ agent_username }}:{{ x-api-key }})</code></p>
 <h3 id='content-type-6'>Content Type</h3>
 <p>Type: <code>application/json</code></p>
 <h3 id='parameter-description-6'>Parameter Description</h3>
@@ -996,7 +1002,113 @@ in the request header,</p>
 <td><code>productId</code></td>
 <td>string</td>
 <td>Y</td>
-<td>Product ID (Ref.<a href="#product-lists">Product List</a>) (Example : <code>PRETTY</code>)</td>
+<td>Product ID (Ref. <a href="#product-lists">Product List</a>) (Example : <code>PRETTY</code>)</td>
+</tr>
+</tbody></table>
+<h2 id='update-member-password-patch'>Update Member Password <code>PATCH</code></h2>
+<aside class="notice">Optional API: Product Slotxo only</aside>
+
+<blockquote>
+<p>Request Body</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"u1"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"productId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SLOTXO"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"password"</span><span class="p">:</span><span class="w"> </span><span class="s2">"testp1234"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<blockquote>
+<p>JSON response example:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"reqId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0ffe1434-c931-4ea8-a430-c7fac8bf5a96"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Success"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"memberAlias"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TFPF.000ful499"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h3 id='http-request-7'>HTTP Request</h3>
+<p><code>PATCH {{ API_URL }}/member</code></p>
+<h3 id='authorization-7'>Authorization</h3>
+<p>Authorization: Basic <code>Base64({{ agent_username }}:{{ x-api-key }})</code></p>
+<h3 id='content-type-7'>Content Type</h3>
+<p>Type: <code>application/json</code></p>
+<h3 id='parameter-description-7'>Parameter Description</h3>
+<table><thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Compulsory</th>
+<th>Description</th>
+<th></th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>username</code></td>
+<td>string</td>
+<td>Y</td>
+<td>Member username</td>
+<td></td>
+</tr>
+<tr>
+<td><code>productId</code></td>
+<td>string</td>
+<td>Y</td>
+<td>Product ID of <strong>SLOTXO</strong></td>
+<td><code>Slotxo only</code></td>
+</tr>
+<tr>
+<td><code>password</code></td>
+<td>string</td>
+<td>Y</td>
+<td>password</td>
+<td></td>
+</tr>
+</tbody></table>
+<h2 id='get-member-alias-get'>Get Member Alias <code>GET</code></h2>
+<aside class="notice">Optional API: Product Slotxo only</aside>
+
+<blockquote>
+<p>JSON response example:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"reqId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"44b308ec-4235-4c47-82e6-8d370dbf1fc9"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Success"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"memberAlias"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TFPF.000ful499"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h3 id='http-request-8'>HTTP Request</h3>
+<p><code>GET {{ API_URL }}/member/{{ username }}/alias?productId={{ productId }}</code></p>
+<h3 id='authorization-8'>Authorization</h3>
+<p>Authorization: Basic <code>Base64({{ agent_username }}:{{ x-api-key }})</code></p>
+<h3 id='content-type-8'>Content Type</h3>
+<p>Type: <code>application/json</code></p>
+<h3 id='parameter-description-8'>Parameter Description</h3>
+<table><thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Compulsory</th>
+<th>Description</th>
+<th></th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>username</code></td>
+<td>string</td>
+<td>Y</td>
+<td>Member username</td>
+<td></td>
+</tr>
+<tr>
+<td><code>productId</code></td>
+<td>string</td>
+<td>Y</td>
+<td>Product ID of <strong>SLOTXO</strong></td>
+<td><code>Slotxo only</code></td>
 </tr>
 </tbody></table>
 <h1 id='response-amp-error-code'>Response &amp; Error Code</h1><h3 id='response-status-http-status'>Response Status (HTTP Status)</h3>
