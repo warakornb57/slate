@@ -1,22 +1,16 @@
-# Errors
+# Response & Error Code
 
-<aside class="notice">
-This error section is stored in a separate file in <code>includes/_errors.md</code>. Slate allows you to optionally separate out your docs into many files...just save them to the <code>includes</code> folder and add them to the top of your <code>index.md</code>'s frontmatter. Files are included in the order listed.
-</aside>
+### Response Status (HTTP Status)
 
-The Kittn API uses the following error codes:
+Occasionally you might encounter errors when accessing the REST API. There are xxx possible types:
 
 
-Error Code | Meaning
----------- | -------
-400 | Bad Request -- Your request is invalid.
-401 | Unauthorized -- Your API key is wrong.
-403 | Forbidden -- The kitten requested is hidden for administrators only.
-404 | Not Found -- The specified kitten could not be found.
-405 | Method Not Allowed -- You tried to access a kitten with an invalid method.
-406 | Not Acceptable -- You requested a format that isn't json.
-410 | Gone -- The kitten requested has been removed from our servers.
-418 | I'm a teapot.
-429 | Too Many Requests -- You're requesting too many kittens! Slow down!
-500 | Internal Server Error -- We had a problem with our server. Try again later.
-503 | Service Unavailable -- We're temporarily offline for maintenance. Please try again later.
+| Error Code | Error Description |
+| ------ | ------ |
+| **400 Bad Request** | Invalid request, e.g. using an unsupported HTTP method |
+| **401 Unauthorized** | Authentication or permission error, e.g. incorrect API keys |
+| **403 Forbidden** | Client error status response code indicates that the server understood the request but refuses to authorize it. |
+| **404 Not Found** | Requests to resources that don't exist or are missing |
+| **500 Internal Server Error** | Some server code error |
+
+Errors return both an appropriate HTTP status code and response object which contains a `code`, `message` and `data` attribute.
