@@ -1,4 +1,3 @@
-
 <!doctype html>
 <html>
   <head>
@@ -6,6 +5,7 @@
     <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <title>API Reference</title>
+    <link href="images/favicon-148c6488.ico" rel="icon" type="image/ico" />
 
     <style media="screen">
       .highlight table td { padding: 5px; }
@@ -279,34 +279,27 @@
   color: #859900;
 }
     </style>
-    <link href="stylesheets/screen-c9d8fa83.css" rel="stylesheet" media="screen" />
+    <link href="stylesheets/screen-070b48e1.css" rel="stylesheet" media="screen" />
     <link href="stylesheets/print-953e3353.css" rel="stylesheet" media="print" />
-      <script src="javascripts/all-e033bdd3.js"></script>
+      <script src="javascripts/all_nosearch-ec00d1ce.js"></script>
 
     <script>
       $(function() { setupCodeCopy(); });
     </script>
   </head>
 
-  <body class="index" data-languages="[&quot;shell&quot;,&quot;ruby&quot;,&quot;python&quot;,&quot;javascript&quot;]">
+  <body class="index" data-languages="[&quot;json&quot;]">
     <a href="#" id="nav-button">
       <span>
-        NAV
+        NAV22
         <img src="images/navbar-cad8cdcb.png" alt="" />
       </span>
     </a>
     <div class="toc-wrapper">
-      <img src="images/logo-1e815a84.png" class="logo" alt="" />
+      <img src="images/logo1-976dfc25.png" class="logo" alt="" />
         <div class="lang-selector">
-              <a href="#" data-language-name="shell">shell</a>
-              <a href="#" data-language-name="ruby">ruby</a>
-              <a href="#" data-language-name="python">python</a>
-              <a href="#" data-language-name="javascript">javascript</a>
+              <a href="#" data-language-name="json">json</a>
         </div>
-        <div class="search">
-          <input type="text" class="search" id="input-search" placeholder="Search">
-        </div>
-        <ul class="search-results"></ul>
       <ul id="toc" class="toc-list-h1">
           <li>
             <a href="#introduction" class="toc-h1 toc-link" data-title="Introduction">Introduction</a>
@@ -315,25 +308,53 @@
             <a href="#authentication" class="toc-h1 toc-link" data-title="Authentication">Authentication</a>
           </li>
           <li>
-            <a href="#kittens" class="toc-h1 toc-link" data-title="Kittens">Kittens</a>
+            <a href="#api-referance" class="toc-h1 toc-link" data-title="API Referance">API Referance</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#get-all-kittens" class="toc-h2 toc-link" data-title="Get All Kittens">Get All Kittens</a>
+                    <a href="#category-lists" class="toc-h2 toc-link" data-title="Category Lists">Category Lists</a>
                   </li>
                   <li>
-                    <a href="#get-a-specific-kitten" class="toc-h2 toc-link" data-title="Get a Specific Kitten">Get a Specific Kitten</a>
-                  </li>
-                  <li>
-                    <a href="#delete-a-specific-kitten" class="toc-h2 toc-link" data-title="Delete a Specific Kitten">Delete a Specific Kitten</a>
+                    <a href="#product-lists" class="toc-h2 toc-link" data-title="Product Lists">Product Lists</a>
                   </li>
               </ul>
           </li>
           <li>
-            <a href="#errors" class="toc-h1 toc-link" data-title="Errors">Errors</a>
+            <a href="#api" class="toc-h1 toc-link" data-title="API">API</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#overview" class="toc-h2 toc-link" data-title="Overview">Overview</a>
+                  </li>
+                  <li>
+                    <a href="#list-games-get" class="toc-h2 toc-link" data-title="List Games GET">List Games <code>GET</code></a>
+                  </li>
+                  <li>
+                    <a href="#create-member-post" class="toc-h2 toc-link" data-title="Create Member POST">Create Member <code>POST</code></a>
+                  </li>
+                  <li>
+                    <a href="#get-balance-get" class="toc-h2 toc-link" data-title="Get Balance GET">Get Balance <code>GET</code></a>
+                  </li>
+                  <li>
+                    <a href="#deposit-post" class="toc-h2 toc-link" data-title="Deposit POST">Deposit <code>POST</code></a>
+                  </li>
+                  <li>
+                    <a href="#login-post" class="toc-h2 toc-link" data-title="Login POST">Login <code>POST</code></a>
+                  </li>
+                  <li>
+                    <a href="#withdraw-post" class="toc-h2 toc-link" data-title="Withdraw POST">Withdraw <code>POST</code></a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#response-amp-error-code" class="toc-h1 toc-link" data-title="Response &amp; Error Code">Response &amp; Error Code</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#response-status-http-status" class="toc-h2 toc-link" data-title="Response Status (HTTP Status)">Response Status (HTTP Status)</a>
+                  </li>
+              </ul>
           </li>
       </ul>
         <ul class="toc-footer">
-            <li><a href='#'>Sign Up for a Developer Key</a></li>
+            <li><a href='https://ambsuperapi.com/profile'>AMB SuperAPI Agent Profile Page</a></li>
             <li><a href='https://github.com/slatedocs/slate'>Documentation Powered by Slate</a></li>
         </ul>
     </div>
@@ -341,250 +362,678 @@
       <div class="dark-box"></div>
       <div class="content">
         <h1 id='introduction'>Introduction</h1>
-<p>Welcome to the Kittn API! You can use our API to access Kittn API endpoints, which can get information on various cats, kittens, and breeds in our database.</p>
+<p><strong>AMB SuperAPI</strong> is designed around RESTFUL API. Our API is made for everyone to be able to read and predictable oriented URLs.The AMB SuperAPI allows you to integrate with the various game providers around the world without handling every risk during the integration of the game provider by yourself and <strong>super simple to use</strong>..</p>
 
-<p>We have language bindings in Shell, Ruby, Python, and JavaScript! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.</p>
-
-<p>This example API documentation page was created with <a href="https://github.com/slatedocs/slate">Slate</a>. Feel free to edit it and use it as a base for your own API&#39;s documentation.</p>
+<p><strong>After Start</strong>
+When you request the API endpoint these need to use a valid API Key. You can get your API key from the <a href="https://ambsuperapi.com/profile">AMB SuperAPI Agent Profile Page</a></p>
 <h1 id='authentication'>Authentication</h1>
-<blockquote>
-<p>To authorize, use this code:</p>
-</blockquote>
-<div class="highlight"><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
+<p>An <strong>API Key</strong> is required to be sent as a part of every request, In the form of <a href="https://swagger.io/docs/specification/authentication/basic-authentication/#:~:text=Basic%20authentication%20is%20a%20simple,55w0rd%20the%20client%20would%20send">Basic Authentication</a>
+in the request header,</p>
 
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
+<p>such as <code>Authorization: Basic abcdefghijklmnop</code></p>
 
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="p">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
-</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code><span class="c"># With shell, you can just pass the correct header with each request</span>
-curl <span class="s2">"api_endpoint_here"</span> <span class="se">\</span>
-  <span class="nt">-H</span> <span class="s2">"Authorization: meowmeowmeow"</span>
-</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">kittn</span><span class="dl">'</span><span class="p">);</span>
+<p>So, The <code>abcdefghijklmnop</code> it comes from <a href="https://en.wikipedia.org/wiki/Base64">Base64-encoded</a> of string <code>agent_username:x-api-key</code>.</p>
 
-<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="dl">'</span><span class="s1">meowmeowmeow</span><span class="dl">'</span><span class="p">);</span>
-</code></pre></div>
-<blockquote>
-<p>Make sure to replace <code>meowmeowmeow</code> with your API key.</p>
-</blockquote>
+<p><strong>that means the username of basic auth is an <code>agent_username</code> and the password is an <code>x-api-key</code></strong></p>
 
-<p>Kittn uses API keys to allow access to the API. You can register a new Kittn API key at our <a href="http://example.com/developers">developer portal</a>.</p>
+<p>If you do not have an API Key, you can easily generate one by heading over to the <a href="https://ambsuperapi.com/profile">AMB SuperAPI Agent Profile Page</a></p>
 
-<p>Kittn expects for the API key to be included in all API requests to the server in a header that looks like the following:</p>
+<p><img src="https://user-images.githubusercontent.com/4927368/95018045-22417980-0687-11eb-89d4-6050a3d2fcef.png" alt="image" /></p>
 
-<p><code>Authorization: meowmeowmeow</code></p>
+<p><strong>API Key related error response</strong></p>
+
+<p>If an API Key is missing, malformed, or invalid, you will receive a <code>403 Unauthorised response code</code> and the following JSON response:</p>
 
 <aside class="notice">
-You must replace <code>meowmeowmeow</code> with your personal API key.
+<code>
+{
+    "message": "Unauthorized",
+    "timestamp": "2020-10-04T14:12:33.013Z",
+    "path": "/member"
+}</code>
 </aside>
-<h1 id='kittens'>Kittens</h1><h2 id='get-all-kittens'>Get All Kittens</h2><div class="highlight"><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
+<div class="highlight"><pre class="highlight json tab-json"><code></code></pre></div><h1 id='api-referance'>API Referance</h1><h2 id='category-lists'>Category Lists</h2>
+<table><thead>
+<tr>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>EGAMES</td>
+<td>Games Slot</td>
+</tr>
+<tr>
+<td>LIVECASINO</td>
+<td>Live Casino</td>
+</tr>
+<tr>
+<td>SPORT</td>
+<td>Sportbook</td>
+</tr>
+</tbody></table>
+<h2 id='product-lists'>Product Lists</h2><h3 id='games-slot'>Games Slot</h3>
+<table><thead>
+<tr>
+<th>Product ID</th>
+<th>Product Name</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>PGSOFT</td>
+<td>PG Soft</td>
+<td>PG Soft</td>
+</tr>
+<tr>
+<td>SLOTXO</td>
+<td>Slotxo</td>
+<td>Slotxo</td>
+</tr>
+<tr>
+<td>PPSLOT</td>
+<td>Pragmatic Play</td>
+<td>Pragmatic Play</td>
+</tr>
+<tr>
+<td>ASKMEBET</td>
+<td>Habanero</td>
+<td>Habanero</td>
+</tr>
+<tr>
+<td>HABANERO</td>
+<td>Spade Gaming</td>
+<td>Spade Gaming</td>
+</tr>
+<tr>
+<td>SPADE</td>
+<td>Spade Gaming</td>
+<td>Spade Gaming</td>
+</tr>
+<tr>
+<td>MICRO</td>
+<td>Micro Gamingg</td>
+<td>Micro Gamingg</td>
+</tr>
+<tr>
+<td>SIMPLEPLAY</td>
+<td>Simple Play</td>
+<td>Simple Play</td>
+</tr>
+<tr>
+<td>ICONIC</td>
+<td>Iconic Gaming</td>
+<td>Iconic Gaming</td>
+</tr>
+<tr>
+<td>MEGA</td>
+<td>Mega888</td>
+<td>Mega888</td>
+</tr>
+<tr>
+<td>XIN</td>
+<td>Xin Gaming</td>
+<td>Xin Gaming</td>
+</tr>
+<tr>
+<td>LIVE22</td>
+<td>Live22</td>
+<td>Live22</td>
+</tr>
+<tr>
+<td>GAMATRON</td>
+<td>Gamatron</td>
+<td>Gamatron</td>
+</tr>
+<tr>
+<td>ALLWAYSPIN</td>
+<td>Allwayspin</td>
+<td>Allwayspin</td>
+</tr>
+<tr>
+<td>FUN</td>
+<td>Fun Gaming</td>
+<td>Fun Gaming</td>
+</tr>
+<tr>
+<td>EURASIAN</td>
+<td>Eurasian Gaming</td>
+<td>Eurasian Gaming</td>
+</tr>
+<tr>
+<td>AMBPOKER</td>
+<td>Ambpoker</td>
+<td>Ambpoker</td>
+</tr>
+<tr>
+<td>JDB</td>
+<td>JDB</td>
+<td>JDB</td>
+</tr>
+<tr>
+<td>WAZDAN</td>
+<td>Wazdan</td>
+<td>Wazdan</td>
+</tr>
+<tr>
+<td>EPICWIN</td>
+<td>Epicwin</td>
+<td>Epicwin</td>
+</tr>
+<tr>
+<td>EVOPLAY</td>
+<td>Evoplay</td>
+<td>Evoplay</td>
+</tr>
+<tr>
+<td>ENDORPHINA</td>
+<td>Endorphina</td>
+<td>Endorphina</td>
+</tr>
+<tr>
+<td>CQ9</td>
+<td>CQ9</td>
+<td>CQ9</td>
+</tr>
+<tr>
+<td>KAGAME</td>
+<td>KA Gaming</td>
+<td>KA Gaming</td>
+</tr>
+<tr>
+<td>JILI</td>
+<td>Jili</td>
+<td>Jili</td>
+</tr>
+<tr>
+<td>JOKER</td>
+<td>Joker123</td>
+<td>Joker123</td>
+</tr>
+<tr>
+<td>MANNA</td>
+<td>Mannaplay</td>
+<td>Mannaplay</td>
+</tr>
+</tbody></table>
+<h3 id='live-casino'>Live Casino</h3>
+<table><thead>
+<tr>
+<th>Product ID</th>
+<th>Product Name</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>SEXY</td>
+<td>Sexy Gaming</td>
+<td>Sexy Gaming</td>
+</tr>
+<tr>
+<td>PPCASINO</td>
+<td>Pragmatic Play</td>
+<td>Pragmatic Play</td>
+</tr>
+<tr>
+<td>BIGGAME</td>
+<td>Big Gaming</td>
+<td>Big Gaming</td>
+</tr>
+<tr>
+<td>DREAM</td>
+<td>Dream Gaming</td>
+<td>Dream Gaming</td>
+</tr>
+<tr>
+<td>WM</td>
+<td>WM Casino</td>
+<td>WM Casino</td>
+</tr>
+<tr>
+<td>BETGAME</td>
+<td>BetgamesTV</td>
+<td>BetgamesTV</td>
+</tr>
+<tr>
+<td>GCLUB</td>
+<td>Royal GClub</td>
+<td>Royal GClub</td>
+</tr>
+<tr>
+<td>EBET</td>
+<td>Ebet</td>
+<td>Ebet</td>
+</tr>
+<tr>
+<td>ALLBET</td>
+<td>AllBet</td>
+<td>AllBet</td>
+</tr>
+<tr>
+<td>AGGAME</td>
+<td>Asia Gaming AG</td>
+<td>Asia Gaming AG</td>
+</tr>
+<tr>
+<td>PRETTY</td>
+<td>Pretty Gaming</td>
+<td>Pretty Gaming</td>
+</tr>
+<tr>
+<td>SAGAME</td>
+<td>SA Gaming</td>
+<td>SA Gaming</td>
+</tr>
+</tbody></table>
+<h3 id='sportbook'>Sportbook</h3>
+<table><thead>
+<tr>
+<th>Product ID</th>
+<th>Product Name</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>SBO</td>
+<td>Sbobet</td>
+<td>Sbobet</td>
+</tr>
+<tr>
+<td>IBC</td>
+<td>IBC</td>
+<td>IBC</td>
+</tr>
+<tr>
+<td>BBIN</td>
+<td>BBIN</td>
+<td>BBIN</td>
+</tr>
+<tr>
+<td>WBET</td>
+<td>WBET</td>
+<td>WBET</td>
+</tr>
+<tr>
+<td>TFGAME</td>
+<td>TF Gaming</td>
+<td>TF Gaming</td>
+</tr>
+<tr>
+<td>IAE</td>
+<td>IAEsports</td>
+<td>IAEsports</td>
+</tr>
+</tbody></table>
+<h1 id='api'>API</h1><h2 id='overview'>Overview</h2>
+<p><strong>Let&#39;s play</strong></p>
 
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="nf">kittens</span><span class="p">.</span><span class="nf">get</span>
-</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="p">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="n">kittens</span><span class="p">.</span><span class="n">get</span><span class="p">()</span>
-</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://example.com/api/kittens"</span> <span class="se">\</span>
-  <span class="nt">-H</span> <span class="s2">"Authorization: meowmeowmeow"</span>
-</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">kittn</span><span class="dl">'</span><span class="p">);</span>
-
-<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="dl">'</span><span class="s1">meowmeowmeow</span><span class="dl">'</span><span class="p">);</span>
-<span class="kd">let</span> <span class="nx">kittens</span> <span class="o">=</span> <span class="nx">api</span><span class="p">.</span><span class="nx">kittens</span><span class="p">.</span><span class="kd">get</span><span class="p">();</span>
-</code></pre></div>
+<ol>
+<li>First, Create a member/gambler on the product that you want in the above <a href="#product-lists">Product List</a></li>
+<li>Deposit some credit to member for playing the game</li>
+<li>Login and get a URL to play the game and turn into a millionire</li>
+<li>Withdraw</li>
+</ol>
+<h2 id='list-games-get'>List Games <code>GET</code></h2>
 <blockquote>
-<p>The above command returns JSON structured like this:</p>
+<p>JSON response example:</p>
 </blockquote>
-<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Fluffums"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"breed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"calico"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"fluffiness"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"cuteness"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Max"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"breed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unknown"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"fluffiness"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"cuteness"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="w">
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"reqId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"91ffb817-1f8e-4608-a86d-472dddc2eed7"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Success"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"games"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+    </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SUCCESS"</span><span class="w">
   </span><span class="p">}</span><span class="w">
-</span><span class="p">]</span><span class="w">
-</span></code></pre></div>
-<p>This endpoint retrieves all kittens.</p>
-<h3 id='http-request'>HTTP Request</h3>
-<p><code>GET http://example.com/api/kittens</code></p>
-<h3 id='query-parameters'>Query Parameters</h3>
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h3 id='http-request'>HTTP Request</h3>
+<p><code>POST http://example.com/games</code></p>
+<h3 id='authorization'>Authorization</h3>
+<p>Authorization: Basic <code>Base64({{agent_username}}:{{x-api-key}})</code></p>
+<h3 id='content-type'>Content Type</h3>
+<p>Type: <code>application/json</code></p>
+<h3 id='parameter-description'>Parameter Description</h3>
 <table><thead>
 <tr>
-<th>Parameter</th>
-<th>Default</th>
+<th>Property</th>
+<th>Type</th>
+<th>Compulsory</th>
 <th>Description</th>
 </tr>
 </thead><tbody>
 <tr>
-<td>include_cats</td>
-<td>false</td>
-<td>If set to true, the result will also include cats.</td>
-</tr>
-<tr>
-<td>available</td>
-<td>true</td>
-<td>If set to false, the result will include kittens that have already been adopted.</td>
+<td><code>productId</code></td>
+<td>string</td>
+<td>Y</td>
+<td>Product ID (Ref.<a href="#product-lists">Product List</a>) (Example : <code>PRETTY</code>)</td>
 </tr>
 </tbody></table>
-
-<aside class="success">
-Remember — a happy kitten is an authenticated kitten!
-</aside>
-<h2 id='get-a-specific-kitten'>Get a Specific Kitten</h2><div class="highlight"><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="nf">kittens</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="p">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="n">kittens</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://example.com/api/kittens/2"</span> <span class="se">\</span>
-  <span class="nt">-H</span> <span class="s2">"Authorization: meowmeowmeow"</span>
-</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">kittn</span><span class="dl">'</span><span class="p">);</span>
-
-<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="dl">'</span><span class="s1">meowmeowmeow</span><span class="dl">'</span><span class="p">);</span>
-<span class="kd">let</span> <span class="nx">max</span> <span class="o">=</span> <span class="nx">api</span><span class="p">.</span><span class="nx">kittens</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
-</code></pre></div>
+<h2 id='create-member-post'>Create Member <code>POST</code></h2>
 <blockquote>
-<p>The above command returns JSON structured like this:</p>
+<p>Request Body</p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Max"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"breed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unknown"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"fluffiness"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"cuteness"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="w">
+  </span><span class="nl">"username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"u1"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"productId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PRETTY"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
-<p>This endpoint retrieves a specific kitten.</p>
-
-<aside class="warning">Inside HTML code blocks like this one, you can't use Markdown, so use <code>&lt;code&gt;</code> blocks to denote code.</aside>
-<h3 id='http-request-2'>HTTP Request</h3>
-<p><code>GET http://example.com/kittens/&lt;ID&gt;</code></p>
-<h3 id='url-parameters'>URL Parameters</h3>
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>ID</td>
-<td>The ID of the kitten to retrieve</td>
-</tr>
-</tbody></table>
-<h2 id='delete-a-specific-kitten'>Delete a Specific Kitten</h2><div class="highlight"><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="nf">kittens</span><span class="p">.</span><span class="nf">delete</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="p">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="n">kittens</span><span class="p">.</span><span class="n">delete</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://example.com/api/kittens/2"</span> <span class="se">\</span>
-  <span class="nt">-X</span> DELETE <span class="se">\</span>
-  <span class="nt">-H</span> <span class="s2">"Authorization: meowmeowmeow"</span>
-</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">kittn</span><span class="dl">'</span><span class="p">);</span>
-
-<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="dl">'</span><span class="s1">meowmeowmeow</span><span class="dl">'</span><span class="p">);</span>
-<span class="kd">let</span> <span class="nx">max</span> <span class="o">=</span> <span class="nx">api</span><span class="p">.</span><span class="nx">kittens</span><span class="p">.</span><span class="k">delete</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
-</code></pre></div>
 <blockquote>
-<p>The above command returns JSON structured like this:</p>
+<p>JSON response example:</p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"deleted"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">":("</span><span class="w">
+  </span><span class="nl">"reqId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"08bbf59d-5619-4c73-ad47-510292dee323"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"u1"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"THB"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SUCCESS"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre></div>
-<p>This endpoint deletes a specific kitten.</p>
-<h3 id='http-request-3'>HTTP Request</h3>
-<p><code>DELETE http://example.com/kittens/&lt;ID&gt;</code></p>
-<h3 id='url-parameters-2'>URL Parameters</h3>
+</span></code></pre></div><h3 id='http-request-2'>HTTP Request</h3>
+<p><code>POST http://example.com/member</code></p>
+<h3 id='authorization-2'>Authorization</h3>
+<p>Authorization: Basic <code>Base64({{agent_username}}:{{x-api-key}})</code></p>
+<h3 id='content-type-2'>Content Type</h3>
+<p>Type: <code>application/json</code></p>
+<h3 id='parameter-description-2'>Parameter Description</h3>
+<p>Create a Member also know as Gambler in whatever product</p>
+
 <table><thead>
 <tr>
-<th>Parameter</th>
+<th>Property</th>
+<th>Type</th>
+<th>Compulsory</th>
 <th>Description</th>
 </tr>
 </thead><tbody>
 <tr>
-<td>ID</td>
-<td>The ID of the kitten to delete</td>
+<td><code>username</code></td>
+<td>string</td>
+<td>Y</td>
+<td>Member username</td>
+</tr>
+<tr>
+<td><code>productId</code></td>
+<td>string</td>
+<td>Y</td>
+<td>Product ID (Ref.<a href="#product-lists">Product List</a>) (Example : <code>PRETTY</code>)</td>
 </tr>
 </tbody></table>
-<h1 id='errors'>Errors</h1>
-<aside class="notice">
-This error section is stored in a separate file in <code>includes/_errors.md</code>. Slate allows you to optionally separate out your docs into many files...just save them to the <code>includes</code> folder and add them to the top of your <code>index.md</code>'s frontmatter. Files are included in the order listed.
-</aside>
-
-<p>The Kittn API uses the following error codes:</p>
+<h2 id='get-balance-get'>Get Balance <code>GET</code></h2>
+<blockquote>
+<p>JSON response example:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"reqId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4a597d2c-1ac8-413b-aaa7-a673b4939494"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Success"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"balance"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10000"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SUCCESS"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"u1"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h3 id='http-request-3'>HTTP Request</h3>
+<p><code>GET http://example.com/balance</code></p>
+<h3 id='authorization-3'>Authorization</h3>
+<p>Authorization: Basic <code>Base64({{agent_username}}:{{x-api-key}})</code></p>
+<h3 id='content-type-3'>Content Type</h3>
+<p>Type: <code>application/json</code></p>
+<h3 id='parameter-description-3'>Parameter Description</h3>
+<table><thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Compulsory</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>username</code></td>
+<td>string</td>
+<td>Y</td>
+<td>Member username</td>
+</tr>
+<tr>
+<td><code>productId</code></td>
+<td>string</td>
+<td>Y</td>
+<td>Product ID (Ref.<a href="#product-lists">Product List</a>) (Example : <code>PRETTY</code>)</td>
+</tr>
+</tbody></table>
+<h2 id='deposit-post'>Deposit <code>POST</code></h2>
+<blockquote>
+<p>Request Body</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"u1"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.00"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"transactionRef"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{ transactionRef }}"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"productId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PRETTY"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<blockquote>
+<p>JSON response example:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"reqId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"e56ab2e2-8a40-4fd9-8639-339130d29ad4"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Success"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10000"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"balance"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10001"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SUCCESS"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"txId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"u1ddne1605072101"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"u1"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"beforeBalance"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10000.00"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h3 id='http-request-4'>HTTP Request</h3>
+<p><code>POST http://example.com/deposit</code></p>
+<h3 id='authorization-4'>Authorization</h3>
+<p>Authorization: Basic <code>Base64({{agent_username}}:{{x-api-key}})</code></p>
+<h3 id='content-type-4'>Content Type</h3>
+<p>Type: <code>application/json</code></p>
+<h3 id='parameter-description-4'>Parameter Description</h3>
+<table><thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Compulsory</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>username</code></td>
+<td>string</td>
+<td>Y</td>
+<td>Member username</td>
+</tr>
+<tr>
+<td><code>amount</code></td>
+<td>string</td>
+<td>Y</td>
+<td>Amount to deposit</td>
+</tr>
+<tr>
+<td><code>transactionRef</code></td>
+<td>string</td>
+<td>Y</td>
+<td>Unique transaction ref</td>
+</tr>
+<tr>
+<td><code>productId</code></td>
+<td>string</td>
+<td>Y</td>
+<td>Product ID (Ref.<a href="#product-lists">Product List</a>) (Example : <code>PRETTY</code>)</td>
+</tr>
+</tbody></table>
+<h2 id='login-post'>Login <code>POST</code></h2>
+<blockquote>
+<p>Request Body</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"u1"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"productId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PRETTY"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"gameCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BAC"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"isMobileLogin"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<blockquote>
+<p>JSON response example:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"reqId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5557191a-4421-4753-a757-8ca7b45828dc"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Success"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"u1"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h3 id='http-request-5'>HTTP Request</h3>
+<p><code>POST http://example.com/logIn</code></p>
+<h3 id='authorization-5'>Authorization</h3>
+<p>Authorization: Basic <code>Base64({{agent_username}}:{{x-api-key}})</code></p>
+<h3 id='content-type-5'>Content Type</h3>
+<p>Type: <code>application/json</code></p>
+<h3 id='parameter-description-5'>Parameter Description</h3>
+<table><thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Compulsory</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>username</code></td>
+<td>string</td>
+<td>Y</td>
+<td>Member username</td>
+</tr>
+<tr>
+<td><code>productId</code></td>
+<td>string</td>
+<td>Y</td>
+<td>Product ID (Ref.<a href="#product-lists">Product List</a>) (Example : `PRETTY)</td>
+</tr>
+<tr>
+<td><code>gameCode</code></td>
+<td>string</td>
+<td>Y</td>
+<td>Game code of product (Example : BAC)</td>
+</tr>
+<tr>
+<td><code>isMobileLogin</code></td>
+<td>boolean</td>
+<td>Y</td>
+<td>Mobile Mode (Example : true)</td>
+</tr>
+</tbody></table>
+<h2 id='withdraw-post'>Withdraw <code>POST</code></h2>
+<blockquote>
+<p>Request Body</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"u1"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.00"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"transactionRef"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{ transactionRef }}"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"productId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PRETTY"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<blockquote>
+<p>JSON response example:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"reqId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"485a1fe0-4974-46e1-92f5-2130c9d74743"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Success"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1000"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"balance"</span><span class="p">:</span><span class="w"> </span><span class="s2">"9001"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SUCCESS"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"txId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"u1sllz1605072697"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"u1"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"beforeBalance"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10001.00"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h3 id='http-request-6'>HTTP Request</h3>
+<p><code>POST http://example.com/withdraw</code></p>
+<h3 id='authorization-6'>Authorization</h3>
+<p>Authorization: Basic <code>Base64({{agent_username}}:{{x-api-key}})</code></p>
+<h3 id='content-type-6'>Content Type</h3>
+<p>Type: <code>application/json</code></p>
+<h3 id='parameter-description-6'>Parameter Description</h3>
+<table><thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Compulsory</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>username</code></td>
+<td>string</td>
+<td>Y</td>
+<td>Member username</td>
+</tr>
+<tr>
+<td><code>amount</code></td>
+<td>string</td>
+<td>Y</td>
+<td>Amount to deposit</td>
+</tr>
+<tr>
+<td><code>transactionRef</code></td>
+<td>string</td>
+<td>Y</td>
+<td>Unique transaction ref</td>
+</tr>
+<tr>
+<td><code>productId</code></td>
+<td>string</td>
+<td>Y</td>
+<td>Product ID (Ref.<a href="#product-lists">Product List</a>) (Example : <code>PRETTY</code>)</td>
+</tr>
+</tbody></table>
+<h1 id='response-amp-error-code'>Response &amp; Error Code</h1><h3 id='response-status-http-status'>Response Status (HTTP Status)</h3>
+<p>Occasionally you might encounter errors when accessing the REST API. There are xxx possible types:</p>
 
 <table><thead>
 <tr>
 <th>Error Code</th>
-<th>Meaning</th>
+<th>Error Description</th>
 </tr>
 </thead><tbody>
 <tr>
-<td>400</td>
-<td>Bad Request -- Your request is invalid.</td>
+<td><strong>400 Bad Request</strong></td>
+<td>Invalid request, e.g. using an unsupported HTTP method</td>
 </tr>
 <tr>
-<td>401</td>
-<td>Unauthorized -- Your API key is wrong.</td>
+<td><strong>401 Unauthorized</strong></td>
+<td>Authentication or permission error, e.g. incorrect API keys</td>
 </tr>
 <tr>
-<td>403</td>
-<td>Forbidden -- The kitten requested is hidden for administrators only.</td>
+<td><strong>403 Forbidden</strong></td>
+<td>Client error status response code indicates that the server understood the request but refuses to authorize it.</td>
 </tr>
 <tr>
-<td>404</td>
-<td>Not Found -- The specified kitten could not be found.</td>
+<td><strong>404 Not Found</strong></td>
+<td>Requests to resources that don&#39;t exist or are missing</td>
 </tr>
 <tr>
-<td>405</td>
-<td>Method Not Allowed -- You tried to access a kitten with an invalid method.</td>
-</tr>
-<tr>
-<td>406</td>
-<td>Not Acceptable -- You requested a format that isn&#39;t json.</td>
-</tr>
-<tr>
-<td>410</td>
-<td>Gone -- The kitten requested has been removed from our servers.</td>
-</tr>
-<tr>
-<td>418</td>
-<td>I&#39;m a teapot.</td>
-</tr>
-<tr>
-<td>429</td>
-<td>Too Many Requests -- You&#39;re requesting too many kittens! Slow down!</td>
-</tr>
-<tr>
-<td>500</td>
-<td>Internal Server Error -- We had a problem with our server. Try again later.</td>
-</tr>
-<tr>
-<td>503</td>
-<td>Service Unavailable -- We&#39;re temporarily offline for maintenance. Please try again later.</td>
+<td><strong>500 Internal Server Error</strong></td>
+<td>Some server code error</td>
 </tr>
 </tbody></table>
+
+<p>Errors return both an appropriate HTTP status code and response object which contains a <code>code</code>, <code>message</code> and <code>data</code> attribute.</p>
 
       </div>
       <div class="dark-box">
           <div class="lang-selector">
-                <a href="#" data-language-name="shell">shell</a>
-                <a href="#" data-language-name="ruby">ruby</a>
-                <a href="#" data-language-name="python">python</a>
-                <a href="#" data-language-name="javascript">javascript</a>
+                <a href="#" data-language-name="json">json</a>
           </div>
       </div>
     </div>
