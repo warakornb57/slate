@@ -21,6 +21,7 @@ code_clipboard: true
 **AMB SuperAPI** is designed around RESTFUL API. Our API is made for everyone to be able to read and predictable oriented URLs.The AMB SuperAPI allows you to integrate with the various game providers around the world without handling every risk during the integration of the game provider by yourself and **super simple to use**..
 
 **After Start**
+
 When you request the API endpoint these need to use a valid API Key. You can get your API key from the [AMB SuperAPI Agent Profile Page](https://ambsuperapi.com/profile)
 
 # Authentication
@@ -43,12 +44,11 @@ If you do not have an API Key, you can easily generate one by heading over to th
 If an API Key is missing, malformed, or invalid, you will receive a `403 Unauthorised response code` and the following JSON response:
 
 <aside class="notice">
-<code>
 {
     "message": "Unauthorized",
     "timestamp": "2020-10-04T14:12:33.013Z",
     "path": "/member"
-}</code>
+}
 </aside>
 ```json
 ```
@@ -153,11 +153,11 @@ If an API Key is missing, malformed, or invalid, you will receive a `403 Unautho
 ```
 ### HTTP Request
 
-`POST http://example.com/games`
+`GET {{ API_URL }}/games?productId={{ productId }}`
 
 ### Authorization
 
-Authorization: Basic `Base64({{agent_username}}:{{x-api-key}})`
+Authorization: Basic `Base64({{ agent_username }}:{{ x-api-key }})`
 
 ### Content Type
 
@@ -167,7 +167,7 @@ Type: `application/json`
 
 | Property    | Type   | Compulsory | Description                                                        |
 | ----------- | ------ | ---------- | ------------------------------------------------------------------ |
-| `productId` | string | Y          | Product ID (Ref.[Product List](#product-lists)) (Example : `PRETTY`) |
+| `productId` | string | Y          | Product ID (Ref. [Product List](#product-lists)) (Example : `PRETTY`) |
 
 ## Create Member `POST`
 
@@ -194,11 +194,11 @@ Type: `application/json`
 ```
 ### HTTP Request
 
-`POST http://example.com/member`
+`POST {{ API_URL }}member`
 
 ### Authorization
 
-Authorization: Basic `Base64({{agent_username}}:{{x-api-key}})`
+Authorization: Basic `Base64({{ agent_username }}:{{ x-api-key }})`
 
 ### Content Type
 
@@ -211,7 +211,7 @@ Create a Member also know as Gambler in whatever product
 | Property    | Type   | Compulsory | Description                                                        |
 | ----------- | ------ | ---------- | ------------------------------------------------------------------ |
 | `username`  | string | Y          | Member username                                                    |
-| `productId` | string | Y          | Product ID (Ref.[Product List](#product-lists)) (Example : `PRETTY`) |
+| `productId` | string | Y          | Product ID (Ref. [Product List](#product-lists)) (Example : `PRETTY`) |
 
 ## Get Balance `GET`
 
@@ -231,12 +231,12 @@ Create a Member also know as Gambler in whatever product
 ```
 ### HTTP Request
 
-`GET http://example.com/balance`
+`GET {{ API_URL }}/balance?username={{ username }}&productId={{ productId }}`
 
 
 ### Authorization
 
-Authorization: Basic `Base64({{agent_username}}:{{x-api-key}})`
+Authorization: Basic `Base64({{ agent_username }}:{{ x-api-key }})`
 
 ### Content Type
 
@@ -247,7 +247,7 @@ Type: `application/json`
 | Property    | Type   | Compulsory | Description                                                        |
 | ----------- | ------ | ---------- | ------------------------------------------------------------------ |
 | `username`  | string | Y          | Member username                                                    |
-| `productId` | string | Y          | Product ID (Ref.[Product List](#product-lists)) (Example : `PRETTY`) |
+| `productId` | string | Y          | Product ID (Ref. [Product List](#product-lists)) (Example : `PRETTY`) |
 
 ## Deposit `POST`
 
@@ -282,11 +282,11 @@ Type: `application/json`
 
 ### HTTP Request
 
-`POST http://example.com/deposit`
+`POST {{ API_URL }}/deposit`
 
 ### Authorization
 
-Authorization: Basic `Base64({{agent_username}}:{{x-api-key}})`
+Authorization: Basic `Base64({{ agent_username }}:{{ x-api-key }})`
 
 ### Content Type
 
@@ -299,7 +299,7 @@ Type: `application/json`
 | `username`       | string | Y          | Member username                                                    |
 | `amount`         | string | Y          | Amount to deposit                                                  |
 | `transactionRef` | string | Y          | Unique transaction ref                                             |
-| `productId`      | string | Y          | Product ID (Ref.[Product List](#product-lists)) (Example : `PRETTY`) |
+| `productId`      | string | Y          | Product ID (Ref. [Product List](#product-lists)) (Example : `PRETTY`) |
 
 ## Login `POST`
 
@@ -330,11 +330,11 @@ Type: `application/json`
 
 ### HTTP Request
 
-`POST http://example.com/logIn`
+`POST {{ API_URL }}/logIn`
 
 ### Authorization
 
-Authorization: Basic `Base64({{agent_username}}:{{x-api-key}})`
+Authorization: Basic `Base64({{ agent_username }}:{{ x-api-key }})`
 
 ### Content Type
 
@@ -345,7 +345,7 @@ Type: `application/json`
 | Property        | Type    | Compulsory | Description                                                        |
 | --------------- | ------- | ---------- | ------------------------------------------------------------------ |
 | `username`      | string  | Y          | Member username                                                    |
-| `productId`     | string  | Y          | Product ID (Ref.[Product List](#product-lists)) (Example : `PRETTY) |
+| `productId`     | string  | Y          | Product ID (Ref. [Product List](#product-lists)) (Example : `PRETTY`) |
 | `gameCode`      | string  | Y          | Game code of product (Example : BAC)                               |
 | `isMobileLogin` | boolean | Y          | Mobile Mode (Example : true)                                       |
 
@@ -382,11 +382,11 @@ Type: `application/json`
 
 ### HTTP Request
 
-`POST http://example.com/withdraw`
+`POST {{ API_URL }}/withdraw`
 
 ### Authorization
 
-Authorization: Basic `Base64({{agent_username}}:{{x-api-key}})`
+Authorization: Basic `Base64({{ agent_username }}:{{ x-api-key }})`
 
 ### Content Type
 
@@ -396,7 +396,90 @@ Type: `application/json`
 
 | Property         | Type     | Compulsory | Description                                                        |
 | ---------------- | -------- | ---------- | ------------------------------------------------------------------ |
-| `username`       | string | Y          | Member username                                                    | `Re |
+| `username`       | string | Y          | Member username                                                    |
 | `amount`         | string | Y          | Amount to deposit                                                  |
 | `transactionRef` | string | Y          | Unique transaction ref                                             |
-| `productId`      | string | Y          | Product ID (Ref.[Product List](#product-lists)) (Example : `PRETTY`) |
+| `productId`      | string | Y          | Product ID (Ref. [Product List](#product-lists)) (Example : `PRETTY`) |
+
+## Update Member Password `PATCH`
+
+<aside class="notice">Optional API: Product Slotxo only</aside>
+
+> Request Body
+
+```json
+{
+  "username": "u1",
+  "productId": "SLOTXO",
+  "password": "testp1234"
+}
+```
+
+> JSON response example:
+
+```json
+{
+    "reqId": "0ffe1434-c931-4ea8-a430-c7fac8bf5a96",
+    "code": 0,
+    "message": "Success",
+    "data": {
+        "memberAlias": "TFPF.000ful499"
+    }
+}
+```
+
+### HTTP Request
+
+`PATCH {{ API_URL }}/member`
+
+### Authorization
+
+Authorization: Basic `Base64({{ agent_username }}:{{ x-api-key }})`
+
+### Content Type
+
+Type: `application/json`
+
+### Parameter Description
+
+| Property         | Type     | Compulsory | Description | |
+| ---------------- | -------- | ---------- | -------------- | -- |
+| `username`       | string | Y          | Member username | |
+| `productId`      | string | Y          | Product ID of **SLOTXO** | `Slotxo only`|
+| `password`       | string | Y          | password | |
+
+## Get Member Alias `GET`
+
+<aside class="notice">Optional API: Product Slotxo only</aside>
+
+> JSON response example:
+
+```json
+{
+    "reqId": "44b308ec-4235-4c47-82e6-8d370dbf1fc9",
+    "code": 0,
+    "message": "Success",
+    "data": {
+        "memberAlias": "TFPF.000ful499"
+    }
+}
+```
+### HTTP Request
+
+`GET {{ API_URL }}/member/{{ username }}/alias?productId={{ productId }}`
+
+
+### Authorization
+
+Authorization: Basic `Base64({{ agent_username }}:{{ x-api-key }})`
+
+### Content Type
+
+Type: `application/json`
+
+### Parameter Description
+
+| Property    | Type   | Compulsory | Description | |
+| ----------- | ------ | ---------- | ---------- | -- |
+| `username`       | string | Y          | Member username | |
+| `productId` | string | Y          | Product ID of **SLOTXO** | `Slotxo only`|
